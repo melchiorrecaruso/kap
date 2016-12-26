@@ -1,4 +1,4 @@
-{ Description: kap library.
+{ Description: Kap library.
 
   Copyright (C) 2016 Melchiorre Caruso <melchiorrecaruso@gmail.com>
 
@@ -29,7 +29,7 @@ unit libkap;
 interface
 
 const
-  // Px represents to physical pin 
+  // Px represents to physical pin
   // on the RaspberryPi connector
   P11 = 0;
   P12 = 1;

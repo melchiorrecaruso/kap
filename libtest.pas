@@ -1,4 +1,4 @@
-{ Description: kap library test program.
+{ Description: Kap library test program.
 
   Copyright (C) 2016 Melchiorre Caruso <melchiorrecaruso@gmail.com>
 
