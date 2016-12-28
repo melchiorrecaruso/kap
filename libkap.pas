@@ -29,23 +29,35 @@ unit libkap;
 interface
 
 const
+
   // Px represents to physical pin
   // on the RaspberryPi connector
   P11 = 0;
   P12 = 1;
+  P13 = 2;
+
 
 function  libinit:boolean;
+procedure libdelay(ms: longword);
+
+procedure pinINPUT (pin: longword);
+procedure pinOUTPUT(pin: longword);
+
+procedure pinON (pin: longword);
+procedure pinOFF(pin: longword);
 
 procedure pwmON (pin: longword; ms: longword);
 procedure pwmOFF(pin: longword; ms: longword);
 
+
 implementation
 
-
 const
+  // Pin modes
   INPUT	 =  0;
   OUTPUT =  1;
 
+  // Pin value
   LOW    =  0;
   HIGH   =  1;
 
@@ -67,11 +79,36 @@ begin
   result := wiringPiSetup <> -1;
 end;
 
+procedure libdelay(ms: longword);
+begin
+  delay(ms);
+end;
+
+procedure pinINPUT(pin: longword);
+begin
+  pinMODE(pin, INPUT);
+end;
+
+procedure pinOUTPUT(pin: longword);
+begin
+  pinMode(pin, OUTPUT);
+end;
+
 function getsteps(ms, tc, td: longword): longword;
 begin
   result := 0;
   while (result * tc) + ((result + 1) * (result div 2) * td) <= ms do
     inc(result);
+end;
+
+procedure pinON(pin: longword);
+begin
+  pwmON(pin, 0);
+end;
+
+procedure pinOFF(pin: longword);
+begin
+  pwmOFF(pin, 0);
 end;
 
 procedure pwmON(pin: longword; ms: longword);
@@ -81,16 +118,15 @@ const
 var
   i: longint;
 begin
-  pinMode(pin, OUTPUT);
-  for i := getsteps(ms -100, tc, td) downto 1 do
-  begin
-    digitalWrite(P11, HIGH);
-    delay(tc);
-    digitalWrite(P11, LOW);
-    delay(i * td);
-  end;
-  digitalWrite(P11, HIGH);
-  delay(100);
+  if ms > 0 then
+    for i := getsteps(ms -100, tc, td) downto 1 do
+    begin
+      digitalWrite(pin, HIGH);
+      delay(tc);
+      digitalWrite(pin, LOW);
+      delay(i * td);
+    end;
+  digitalWrite(pin, HIGH);
 end;
 
 procedure pwmOFF(pin: longword; ms: longword);
@@ -100,16 +136,15 @@ const
 var
   i: longint;
 begin
-  pinMode(pin, OUTPUT);
-  for i := 1 to getsteps(ms -100, tc, td) do
-  begin
-    digitalWrite(P11, HIGH);
-    delay(tc);
-    digitalWrite(P11, LOW);
-    delay(i * td);
-  end;
-  digitalWrite(P11, LOW);
-  delay(100);
+  if ms > 0 then
+    for i := 1 to getsteps(ms -100, tc, td) do
+    begin
+      digitalWrite(pin, HIGH);
+      delay(tc);
+      digitalWrite(pin, LOW);
+      delay(i * td);
+    end;
+  digitalWrite(pin, LOW);
 end;
 
 end.

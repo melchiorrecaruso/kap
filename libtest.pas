@@ -33,13 +33,31 @@ var
   j: longint;
 
 begin
-  writeln('RaspberryPi test: pwnON, pwmOFF');
+  writeln('RaspberryPi TEST');
   if libinit then
+  begin
+
+    pinOUTPUT(P11);
+    pinOUTPUT(P12);
+    pinOUTPUT(P13);
+
+
+    pinOFF (P11);
+    pinON  (P12);
+
     for j := 0 to 1 do
     begin
-      pwmON (P11, 1000);
-      pwmOFF(P11, 1000);
-    end
-  else
+
+    pwmON (P13, 2500);
+
+    libdelay(2000);
+
+    pinOFF (P13);
+
+    libdelay(2000);
+
+    end;
+
+  end else
     writeln('Error setting up the RaspberryPi');
 end.
