@@ -67,7 +67,7 @@ constructor tkapcam.create(createsuspended : boolean);
 begin
   freeonterminate := true;
   inherited create(createsuspended);
-  previewfn := includetrailingbackslash(getcurrentdir) + 'previw.jpg';
+  previewfn := extractfilepath(application.exename) + 'previw.jpg';
 end;
 
 procedure tkapcam.execute;

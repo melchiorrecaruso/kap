@@ -16,15 +16,15 @@ object KapForm: TKapForm
     AnchorSideBottom.Control = MonitorPanel
     AnchorSideBottom.Side = asrBottom
     Left = 454
-    Height = 32
-    Top = 387
+    Height = 48
+    Top = 371
     Width = 140
     Anchors = [akRight, akBottom]
     BorderSpacing.Bottom = 25
     Caption = 'ACTION'
-    Constraints.MaxHeight = 32
+    Constraints.MaxHeight = 48
     Constraints.MaxWidth = 140
-    Constraints.MinHeight = 32
+    Constraints.MinHeight = 48
     Constraints.MinWidth = 140
     OnClick = ActionBitBtnClick
     TabOrder = 0
@@ -53,9 +53,9 @@ object KapForm: TKapForm
     TabOrder = 1
     object MonitorImage: TImage
       Left = 2
-      Height = 434
+      Height = 430
       Top = 2
-      Width = 438
+      Width = 434
       Align = alClient
       Center = True
       Picture.Data = {
@@ -1468,16 +1468,16 @@ object KapForm: TKapForm
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
     Left = 454
-    Height = 32
+    Height = 48
     Top = 31
     Width = 140
     Anchors = [akTop, akRight]
     BorderSpacing.Top = 25
     BorderSpacing.Right = 6
     Caption = 'UP'
-    Constraints.MaxHeight = 32
+    Constraints.MaxHeight = 48
     Constraints.MaxWidth = 140
-    Constraints.MinHeight = 32
+    Constraints.MinHeight = 48
     Constraints.MinWidth = 140
     TabOrder = 2
   end
@@ -1487,15 +1487,15 @@ object KapForm: TKapForm
     AnchorSideRight.Control = UpBitBtn
     AnchorSideRight.Side = asrBottom
     Left = 454
-    Height = 32
-    Top = 69
+    Height = 48
+    Top = 85
     Width = 140
     Anchors = [akTop, akRight]
     BorderSpacing.Top = 6
     Caption = 'DOWN'
-    Constraints.MaxHeight = 32
+    Constraints.MaxHeight = 48
     Constraints.MaxWidth = 140
-    Constraints.MinHeight = 32
+    Constraints.MinHeight = 48
     Constraints.MinWidth = 140
     TabOrder = 3
   end
@@ -1505,15 +1505,15 @@ object KapForm: TKapForm
     AnchorSideRight.Control = UpBitBtn
     AnchorSideRight.Side = asrBottom
     Left = 454
-    Height = 32
-    Top = 157
+    Height = 48
+    Top = 205
     Width = 140
     Anchors = [akTop, akRight]
     BorderSpacing.Top = 6
     Caption = 'RIGHT'
-    Constraints.MaxHeight = 32
+    Constraints.MaxHeight = 48
     Constraints.MaxWidth = 140
-    Constraints.MinHeight = 32
+    Constraints.MinHeight = 48
     Constraints.MinWidth = 140
     TabOrder = 4
   end
@@ -1523,15 +1523,15 @@ object KapForm: TKapForm
     AnchorSideRight.Control = UpBitBtn
     AnchorSideRight.Side = asrBottom
     Left = 454
-    Height = 32
-    Top = 119
+    Height = 48
+    Top = 151
     Width = 140
     Anchors = [akTop, akRight]
     BorderSpacing.Top = 18
     Caption = 'LEFT'
-    Constraints.MaxHeight = 32
+    Constraints.MaxHeight = 48
     Constraints.MaxWidth = 140
-    Constraints.MinHeight = 32
+    Constraints.MinHeight = 48
     Constraints.MinWidth = 140
     TabOrder = 5
   end
@@ -1542,7 +1542,7 @@ object KapForm: TKapForm
     AnchorSideBottom.Control = ActionBitBtn
     Left = 454
     Height = 23
-    Top = 354
+    Top = 338
     Width = 140
     Anchors = [akLeft, akRight, akBottom]
     BorderSpacing.Bottom = 10
@@ -1554,7 +1554,7 @@ object KapForm: TKapForm
     Enabled = False
     Interval = 5000
     OnTimer = SelfTimerTimer
-    left = 504
-    top = 216
+    left = 488
+    top = 272
   end
 end

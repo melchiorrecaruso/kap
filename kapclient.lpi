@@ -43,7 +43,6 @@
       <Unit0>
         <Filename Value="kapclient.lpr"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
@@ -67,10 +66,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="kapclientform"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
         <TopLine Value="41"/>
-        <CursorPos X="17" Y="61"/>
+        <CursorPos X="35" Y="60"/>
         <FoldState Value=" T3jY0At"/>
         <UsageCount Value="50"/>
         <Loaded Value="True"/>
