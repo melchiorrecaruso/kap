@@ -9,7 +9,6 @@
       <ResourceType Value="res"/>
       <UseXPManifest Value="True"/>
       <Icon Value="0"/>
-      <ActiveWindowIndexAtStart Value="0"/>
     </General>
     <i18n>
       <EnableI18N LFM="False"/>
@@ -39,13 +38,10 @@
         <PackageName Value="LCL"/>
       </Item3>
     </RequiredPackages>
-    <Units Count="24">
+    <Units Count="23">
       <Unit0>
         <Filename Value="kapclient.lpr"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="0"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
         <CursorPos X="4" Y="17"/>
         <UsageCount Value="50"/>
         <Loaded Value="True"/>
@@ -65,12 +61,10 @@
         <ComponentName Value="KapForm"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <UnitName Value="kapclientform"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="41"/>
-        <CursorPos X="35" Y="60"/>
+        <TopLine Value="42"/>
+        <CursorPos X="47" Y="45"/>
         <FoldState Value=" T3jY0At"/>
         <UsageCount Value="50"/>
         <Loaded Value="True"/>
@@ -173,8 +167,6 @@
       </Unit16>
       <Unit17>
         <Filename Value="libkapclient.pas"/>
-        <UnitName Value="libkapclient"/>
-        <TopLine Value="1"/>
         <CursorPos X="96" Y="5"/>
         <UsageCount Value="13"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
@@ -198,29 +190,19 @@
         <UsageCount Value="9"/>
       </Unit20>
       <Unit21>
-        <Filename Value="..\..\..\..\..\usr\share\fpcsrc\2.6.4\packages\fcl-process\src\process.pp"/>
-        <UnitName Value="process"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="76"/>
-        <CursorPos X="10" Y="179"/>
-        <UsageCount Value="11"/>
-      </Unit21>
-      <Unit22>
-        <Filename Value="..\..\..\..\..\usr\share\fpcsrc\2.6.4\rtl\unix\unix.pp"/>
+        <Filename Value="C:\usr\share\fpcsrc\2.6.4\rtl\unix\unix.pp"/>
         <UnitName Value="Unix"/>
-        <WindowIndex Value="0"/>
         <TopLine Value="68"/>
         <CursorPos X="10" Y="90"/>
         <UsageCount Value="9"/>
-      </Unit22>
-      <Unit23>
-        <Filename Value="..\..\..\..\..\usr\lib\lazarus\1.2.4\lcl\dialogs.pp"/>
+      </Unit21>
+      <Unit22>
+        <Filename Value="C:\usr\lib\lazarus\1.2.4\lcl\dialogs.pp"/>
         <UnitName Value="Dialogs"/>
-        <WindowIndex Value="0"/>
         <TopLine Value="8"/>
         <CursorPos X="56" Y="30"/>
         <UsageCount Value="9"/>
-      </Unit23>
+      </Unit22>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
@@ -233,7 +215,7 @@
       </Position2>
       <Position3>
         <Filename Value="kapclientform.pas"/>
-        <Caret Line="78" Column="1" TopLine="63"/>
+        <Caret Line="78" TopLine="63"/>
       </Position3>
       <Position4>
         <Filename Value="kapclientform.pas"/>
@@ -241,7 +223,7 @@
       </Position4>
       <Position5>
         <Filename Value="kapclientform.pas"/>
-        <Caret Line="19" Column="21" TopLine="1"/>
+        <Caret Line="19" Column="21"/>
       </Position5>
       <Position6>
         <Filename Value="kapclientform.pas"/>
@@ -337,11 +319,11 @@
       </Position28>
       <Position29>
         <Filename Value="kapclientform.pas"/>
-        <Caret Line="35" Column="33" TopLine="1"/>
+        <Caret Line="35" Column="33"/>
       </Position29>
       <Position30>
         <Filename Value="kapclient.lpr"/>
-        <Caret Line="22" Column="26" TopLine="1"/>
+        <Caret Line="22" Column="26"/>
       </Position30>
     </JumpHistory>
   </ProjectOptions>
@@ -378,9 +360,6 @@
         </Win32>
       </Options>
     </Linking>
-    <Other>
-      <CompilerPath Value="$(CompPath)"/>
-    </Other>
   </CompilerOptions>
   <Debugging>
     <Exceptions Count="3">
@@ -395,5 +374,4 @@
       </Item3>
     </Exceptions>
   </Debugging>
-  <EditorMacros Count="0"/>
 </CONFIG>
