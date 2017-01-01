@@ -26,28 +26,11 @@ unit libkapclient;
 interface
 
 uses
-  sysutils, process;
-
-function getcam: ansistring;
-
+  sysutils;
 
 implementation
 
-function getcam: ansistring;
-var
-  p: tprocess;
-begin
-  result := includetrailingbackslash(getcurrentdir) + 'kap.jpg';
 
-  p := tprocess.create(nil);
-  p.currentdirectory := getcurrentdir;
-  p.commandline := 'fswebcam -r 640x480 -S 20 --no-banner ' + result;
-  p.options     := [powaitonexit];
-  p.execute;
-  p.free;
-
-
-end;
 
 
 
