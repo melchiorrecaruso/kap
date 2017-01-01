@@ -1,7 +1,7 @@
 object KapForm: TKapForm
-  Left = 321
+  Left = 328
   Height = 500
-  Top = 144
+  Top = 183
   Width = 800
   Caption = 'Sweet KAPcake'
   ClientHeight = 500
@@ -9,7 +9,8 @@ object KapForm: TKapForm
   Constraints.MinHeight = 500
   Constraints.MinWidth = 800
   OnCreate = FormCreate
-  LCLVersion = '1.6.2.0'
+  Position = poMainFormCenter
+  LCLVersion = '1.2.4.0'
   object ActionBitBtn: TBitBtn
     AnchorSideRight.Control = UpBitBtn
     AnchorSideRight.Side = asrBottom
@@ -1541,8 +1542,8 @@ object KapForm: TKapForm
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Control = ActionBitBtn
     Left = 654
-    Height = 19
-    Top = 392
+    Height = 23
+    Top = 388
     Width = 140
     Anchors = [akLeft, akRight, akBottom]
     BorderSpacing.Bottom = 10
