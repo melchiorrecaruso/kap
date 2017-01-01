@@ -26,70 +26,29 @@ unit libkapclient;
 interface
 
 uses
-  tlntsend, ftpsend;
+  sysutils, process;
 
-type
-  tkapclient = class
-  private
-    ftelnetsend: ttelnetsend;
-    fftpsend: tftpsend;
-  public
-    constructor create(ahost: string);
-    destructor destroy; override;
-    procedure sendcommand(acommand: string);
-    procedure logout;
-    function receivedata: string;
-    function login: boolean;
-  end;
+function getcam: ansistring;
+
 
 implementation
 
-{ tkapclient }
-
-constructor tkapclient.create(ahost: string);
-begin
-  inherited create;
-  ftelnetsend := ttelnetsend.create;
-  ftelnetsend.targethost := ahost;
-  ftelnetsend.targetport := cTelnetProtocol;
-end;
-
-destructor tkapclient.destroy;
-begin
-  ftelnetsend.free;
-  inherited destroy;
-end;
-
-function tkapclient.login: boolean;
-begin
-  result := ftelnetsend.login;
-end;
-
-procedure tkapclient.logout;
-begin
-  ftelnetsend.logout;
-end;
-
-function tkapclient.receivedata: string;
+function getcam: ansistring;
 var
-  lpos: integer;
+  p: tprocess;
 begin
-  result := '';
+  result := includetrailingbackslash(getcurrentdir) + 'kap.jpg';
 
-  lpos := 1;
-  while (ftelnetsend.sock.canread  (2500)) or
-        (ftelnetsend.sock.waitingdata > 0) do
-  begin
-    ftelnetsend.sock.recvpacket(1000);
-    result := result + copy(ftelnetsend.sessionlog,
-      lpos, length(ftelnetsend.sessionlog));
-    lpos := length(ftelnetsend.sessionlog) + 1;
-  end;
+  p := tprocess.create(nil);
+  p.currentdirectory := getcurrentdir;
+  p.commandline := 'fswebcam -r 640x480 -S 20 --no-banner ' + result;
+  p.options     := [powaitonexit];
+  p.execute;
+  p.free;
+
+
 end;
 
-procedure tkapclient.sendcommand(acommand: string);
-begin
-  ftelnetsend.send(acommand + #13);
-end;
+
 
 end.
