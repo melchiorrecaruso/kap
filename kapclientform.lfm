@@ -9,7 +9,7 @@ object KapForm: TKapForm
   Constraints.MinHeight = 500
   Constraints.MinWidth = 800
   OnCreate = FormCreate
-  Position = poMainFormCenter
+  Position = poScreenCenter
   LCLVersion = '1.2.4.0'
   object ActionBitBtn: TBitBtn
     AnchorSideRight.Control = UpBitBtn
