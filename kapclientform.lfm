@@ -1,7 +1,7 @@
 object KapForm: TKapForm
-  Left = 368
+  Left = 310
   Height = 450
-  Top = 126
+  Top = 171
   Width = 600
   Caption = 'Sweet KAPcake'
   ClientHeight = 450
@@ -9,8 +9,7 @@ object KapForm: TKapForm
   Constraints.MinHeight = 450
   Constraints.MinWidth = 600
   OnCreate = FormCreate
-  OnDestroy = FormDestroy
-  LCLVersion = '1.6.2.0'
+  LCLVersion = '1.2.4.0'
   object ActionBitBtn: TBitBtn
     AnchorSideRight.Control = UpBitBtn
     AnchorSideRight.Side = asrBottom
@@ -18,10 +17,11 @@ object KapForm: TKapForm
     AnchorSideBottom.Side = asrBottom
     Left = 454
     Height = 32
-    Top = 412
+    Top = 387
     Width = 140
     Anchors = [akRight, akBottom]
-    Caption = 'Action'
+    BorderSpacing.Bottom = 25
+    Caption = 'ACTION'
     Constraints.MaxHeight = 32
     Constraints.MaxWidth = 140
     Constraints.MinHeight = 32
@@ -1460,7 +1460,7 @@ object KapForm: TKapForm
         1C50C3188E38D40C05551C003D0702AC51457519051451400514514005145140
         1FFFD9
       }
-      Transparent = True
+      Proportional = True
     end
   end
   object UpBitBtn: TBitBtn
@@ -1469,9 +1469,10 @@ object KapForm: TKapForm
     AnchorSideRight.Side = asrBottom
     Left = 454
     Height = 32
-    Top = 6
+    Top = 31
     Width = 140
     Anchors = [akTop, akRight]
+    BorderSpacing.Top = 25
     BorderSpacing.Right = 6
     Caption = 'UP'
     Constraints.MaxHeight = 32
@@ -1487,7 +1488,7 @@ object KapForm: TKapForm
     AnchorSideRight.Side = asrBottom
     Left = 454
     Height = 32
-    Top = 44
+    Top = 69
     Width = 140
     Anchors = [akTop, akRight]
     BorderSpacing.Top = 6
@@ -1505,7 +1506,7 @@ object KapForm: TKapForm
     AnchorSideRight.Side = asrBottom
     Left = 454
     Height = 32
-    Top = 132
+    Top = 157
     Width = 140
     Anchors = [akTop, akRight]
     BorderSpacing.Top = 6
@@ -1523,7 +1524,7 @@ object KapForm: TKapForm
     AnchorSideRight.Side = asrBottom
     Left = 454
     Height = 32
-    Top = 94
+    Top = 119
     Width = 140
     Anchors = [akTop, akRight]
     BorderSpacing.Top = 18
@@ -1540,18 +1541,20 @@ object KapForm: TKapForm
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Control = ActionBitBtn
     Left = 454
-    Height = 19
-    Top = 383
+    Height = 23
+    Top = 354
     Width = 140
     Anchors = [akLeft, akRight, akBottom]
     BorderSpacing.Bottom = 10
-    Caption = 'Autoscatto'
+    Caption = 'Self timer'
+    OnEditingDone = AutoCheckBoxEditingDone
     TabOrder = 6
   end
-  object CamTimer: TTimer
+  object SelfTimer: TTimer
+    Enabled = False
     Interval = 5000
-    OnTimer = CamTimerTimer
-    left = 32
-    top = 24
+    OnTimer = SelfTimerTimer
+    left = 504
+    top = 216
   end
 end

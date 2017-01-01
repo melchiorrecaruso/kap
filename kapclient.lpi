@@ -5,10 +5,11 @@
     <PathDelim Value="\"/>
     <General>
       <MainUnit Value="0"/>
-      <Title Value="kapclient"/>
+      <Title Value="KAPcake"/>
       <ResourceType Value="res"/>
       <UseXPManifest Value="True"/>
       <Icon Value="0"/>
+      <ActiveWindowIndexAtStart Value="0"/>
     </General>
     <i18n>
       <EnableI18N LFM="False"/>
@@ -38,12 +39,17 @@
         <PackageName Value="LCL"/>
       </Item3>
     </RequiredPackages>
-    <Units Count="21">
+    <Units Count="24">
       <Unit0>
         <Filename Value="kapclient.lpr"/>
         <IsPartOfProject Value="True"/>
-        <CursorPos X="41" Y="17"/>
-        <UsageCount Value="36"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="0"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="4" Y="17"/>
+        <UsageCount Value="50"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit0>
       <Unit1>
@@ -51,7 +57,7 @@
         <ComponentName Value="Form1"/>
         <ResourceBaseClass Value="Form"/>
         <CursorPos X="7"/>
-        <UsageCount Value="19"/>
+        <UsageCount Value="18"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit1>
       <Unit2>
@@ -60,10 +66,13 @@
         <ComponentName Value="KapForm"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <IsVisibleTab Value="True"/>
-        <TopLine Value="62"/>
-        <CursorPos X="32" Y="81"/>
-        <UsageCount Value="36"/>
+        <UnitName Value="kapclientform"/>
+        <EditorIndex Value="1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="41"/>
+        <CursorPos X="17" Y="61"/>
+        <FoldState Value=" T3jY0At"/>
+        <UsageCount Value="50"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
@@ -72,245 +81,267 @@
         <Filename Value="libkap.pas"/>
         <UnitName Value="sshclient"/>
         <CursorPos X="19" Y="20"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit3>
       <Unit4>
         <Filename Value="libsshclient.pas"/>
         <TopLine Value="13"/>
         <CursorPos X="8" Y="32"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="10"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit4>
       <Unit5>
         <Filename Value="..\..\Downloads\synapse40\source\lib\tlntsend.pas"/>
         <TopLine Value="89"/>
         <CursorPos X="78" Y="120"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit5>
       <Unit6>
         <Filename Value="..\..\Downloads\synapse40\source\lib\ssl_cryptlib.pas"/>
         <TopLine Value="71"/>
         <CursorPos X="66" Y="79"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="10"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit6>
       <Unit7>
         <Filename Value="..\..\Downloads\synapse40\source\lib\laz_synapse.pas"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit7>
       <Unit8>
         <Filename Value="..\..\Downloads\synapse40\source\lib\blcksock.pas"/>
         <TopLine Value="1456"/>
         <CursorPos X="14" Y="1473"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit8>
       <Unit9>
         <Filename Value="cryptlib\cryptlib.pas"/>
         <TopLine Value="25"/>
         <CursorPos X="36" Y="35"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="10"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit9>
       <Unit10>
         <Filename Value="..\..\Downloads\synapse40\source\lib\ssl_openssl.pas"/>
         <TopLine Value="52"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit10>
       <Unit11>
         <Filename Value="..\..\Downloads\synapse40\source\lib\ssl_openssl_lib.pas"/>
         <TopLine Value="91"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit11>
       <Unit12>
         <Filename Value="..\synapse\ssl_libssh2.pas"/>
         <TopLine Value="40"/>
         <CursorPos X="83" Y="55"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit12>
       <Unit13>
         <Filename Value="..\synapse\ssl_cryptlib.pas"/>
         <TopLine Value="83"/>
         <CursorPos X="46" Y="80"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit13>
       <Unit14>
         <Filename Value="..\synapse\cryptlib.pas"/>
         <TopLine Value="16"/>
         <CursorPos X="2" Y="55"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit14>
       <Unit15>
         <Filename Value="..\synapse\tlntsend.pas"/>
         <TopLine Value="71"/>
         <CursorPos X="3" Y="88"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="10"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit15>
       <Unit16>
         <Filename Value="libtlntclient.pas"/>
         <TopLine Value="63"/>
         <CursorPos X="21" Y="91"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit16>
       <Unit17>
         <Filename Value="libkapclient.pas"/>
-        <EditorIndex Value="1"/>
-        <TopLine Value="4"/>
-        <CursorPos X="12" Y="29"/>
-        <UsageCount Value="14"/>
-        <Loaded Value="True"/>
+        <UnitName Value="libkapclient"/>
+        <TopLine Value="1"/>
+        <CursorPos X="96" Y="5"/>
+        <UsageCount Value="13"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit17>
       <Unit18>
         <Filename Value="..\synapse\blcksock.pas"/>
         <TopLine Value="132"/>
         <CursorPos X="14" Y="1482"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit18>
       <Unit19>
         <Filename Value="..\synapse\ftpsend.pas"/>
         <TopLine Value="19"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit19>
       <Unit20>
         <Filename Value="C:\usr\share\fpcsrc\2.6.4\packages\fcl-process\src\process.pp"/>
-        <EditorIndex Value="-1"/>
         <CursorPos X="64" Y="28"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
       </Unit20>
+      <Unit21>
+        <Filename Value="..\..\..\..\..\usr\share\fpcsrc\2.6.4\packages\fcl-process\src\process.pp"/>
+        <UnitName Value="process"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="76"/>
+        <CursorPos X="10" Y="179"/>
+        <UsageCount Value="11"/>
+      </Unit21>
+      <Unit22>
+        <Filename Value="..\..\..\..\..\usr\share\fpcsrc\2.6.4\rtl\unix\unix.pp"/>
+        <UnitName Value="Unix"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="68"/>
+        <CursorPos X="10" Y="90"/>
+        <UsageCount Value="9"/>
+      </Unit22>
+      <Unit23>
+        <Filename Value="..\..\..\..\..\usr\lib\lazarus\1.2.4\lcl\dialogs.pp"/>
+        <UnitName Value="Dialogs"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="8"/>
+        <CursorPos X="56" Y="30"/>
+        <UsageCount Value="9"/>
+      </Unit23>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="kapclientform.pas"/>
-        <Caret Line="64" Column="20" TopLine="43"/>
+        <Caret Line="61" Column="37" TopLine="39"/>
       </Position1>
       <Position2>
         <Filename Value="kapclientform.pas"/>
-        <Caret Line="63" Column="20" TopLine="42"/>
+        <Caret Line="106" Column="33" TopLine="71"/>
       </Position2>
       <Position3>
         <Filename Value="kapclientform.pas"/>
-        <Caret Line="62" Column="20" TopLine="41"/>
+        <Caret Line="78" Column="1" TopLine="63"/>
       </Position3>
       <Position4>
         <Filename Value="kapclientform.pas"/>
-        <Caret Line="61" Column="20" TopLine="40"/>
+        <Caret Line="74" Column="71" TopLine="52"/>
       </Position4>
       <Position5>
         <Filename Value="kapclientform.pas"/>
-        <Caret Line="60" Column="20" TopLine="39"/>
+        <Caret Line="19" Column="21" TopLine="1"/>
       </Position5>
       <Position6>
         <Filename Value="kapclientform.pas"/>
-        <Caret Line="59" Column="20" TopLine="38"/>
+        <Caret Line="86" Column="13" TopLine="64"/>
       </Position6>
       <Position7>
         <Filename Value="kapclientform.pas"/>
-        <Caret Line="51" Column="5" TopLine="21"/>
+        <Caret Line="39" Column="50" TopLine="18"/>
       </Position7>
       <Position8>
         <Filename Value="kapclientform.pas"/>
-        <Caret Line="6" Column="14"/>
+        <Caret Line="130" Column="18" TopLine="59"/>
       </Position8>
       <Position9>
-        <Filename Value="libkapclient.pas"/>
-        <Caret Line="19" Column="43"/>
+        <Filename Value="kapclientform.pas"/>
+        <Caret Line="80" Column="31" TopLine="59"/>
       </Position9>
       <Position10>
-        <Filename Value="libkapclient.pas"/>
-        <Caret Line="26" TopLine="3"/>
+        <Filename Value="kapclientform.pas"/>
+        <Caret Line="58" Column="3" TopLine="28"/>
       </Position10>
       <Position11>
-        <Filename Value="libkapclient.pas"/>
-        <Caret Line="44" Column="17" TopLine="6"/>
+        <Filename Value="kapclientform.pas"/>
+        <Caret Line="81" Column="19" TopLine="59"/>
       </Position11>
       <Position12>
         <Filename Value="kapclientform.pas"/>
-        <Caret Line="41" TopLine="10"/>
+        <Caret Line="119" Column="6" TopLine="78"/>
       </Position12>
       <Position13>
-        <Filename Value="libkapclient.pas"/>
-        <Caret Line="26" Column="31" TopLine="5"/>
+        <Filename Value="kapclientform.pas"/>
+        <Caret Line="113" Column="63" TopLine="92"/>
       </Position13>
       <Position14>
-        <Filename Value="libkapclient.pas"/>
-        <Caret Line="45" Column="69" TopLine="6"/>
+        <Filename Value="kapclientform.pas"/>
+        <Caret Line="78" Column="30" TopLine="68"/>
       </Position14>
       <Position15>
         <Filename Value="kapclientform.pas"/>
-        <Caret Line="41" Column="103" TopLine="16"/>
+        <Caret Line="89" Column="15" TopLine="68"/>
       </Position15>
       <Position16>
         <Filename Value="kapclientform.pas"/>
-        <Caret Line="40" Column="103" TopLine="16"/>
+        <Caret Line="138" Column="41" TopLine="102"/>
       </Position16>
       <Position17>
         <Filename Value="kapclientform.pas"/>
-        <Caret Line="62" Column="39" TopLine="38"/>
+        <Caret Line="159" Column="37" TopLine="104"/>
       </Position17>
       <Position18>
         <Filename Value="kapclientform.pas"/>
-        <Caret Line="40" Column="3" TopLine="17"/>
+        <Caret Line="163" Column="18" TopLine="110"/>
       </Position18>
       <Position19>
         <Filename Value="kapclientform.pas"/>
-        <Caret Line="56" Column="29" TopLine="36"/>
+        <Caret Line="82" Column="29" TopLine="73"/>
       </Position19>
       <Position20>
         <Filename Value="kapclientform.pas"/>
-        <Caret Line="55" Column="29" TopLine="35"/>
+        <Caret Line="83" Column="37" TopLine="61"/>
       </Position20>
       <Position21>
         <Filename Value="kapclientform.pas"/>
-        <Caret Line="81" Column="3" TopLine="47"/>
+        <Caret Line="115" Column="31" TopLine="69"/>
       </Position21>
       <Position22>
         <Filename Value="kapclientform.pas"/>
-        <Caret Line="82" Column="3" TopLine="49"/>
+        <Caret Line="107" Column="58" TopLine="69"/>
       </Position22>
       <Position23>
         <Filename Value="kapclientform.pas"/>
-        <Caret Line="81" Column="3" TopLine="48"/>
+        <Caret Line="72" Column="54" TopLine="49"/>
       </Position23>
       <Position24>
         <Filename Value="kapclientform.pas"/>
-        <Caret Line="82" Column="33" TopLine="61"/>
+        <Caret Line="88" Column="28" TopLine="59"/>
       </Position24>
       <Position25>
         <Filename Value="kapclientform.pas"/>
-        <Caret Line="80" Column="60" TopLine="64"/>
+        <Caret Line="77" Column="52" TopLine="59"/>
       </Position25>
       <Position26>
         <Filename Value="kapclientform.pas"/>
-        <Caret Line="78" Column="13" TopLine="59"/>
+        <Caret Line="98" Column="8" TopLine="53"/>
       </Position26>
       <Position27>
         <Filename Value="kapclientform.pas"/>
-        <Caret Line="83" Column="5" TopLine="58"/>
+        <Caret Line="88" Column="20" TopLine="65"/>
       </Position27>
       <Position28>
         <Filename Value="kapclientform.pas"/>
-        <Caret Line="6" Column="23" TopLine="10"/>
+        <Caret Line="139" Column="10" TopLine="99"/>
       </Position28>
       <Position29>
         <Filename Value="kapclientform.pas"/>
-        <Caret Line="28" Column="75" TopLine="20"/>
+        <Caret Line="35" Column="33" TopLine="1"/>
       </Position29>
       <Position30>
-        <Filename Value="kapclientform.pas"/>
-        <Caret Line="78" Column="70" TopLine="65"/>
+        <Filename Value="kapclient.lpr"/>
+        <Caret Line="22" Column="26" TopLine="1"/>
       </Position30>
     </JumpHistory>
   </ProjectOptions>
@@ -334,9 +365,6 @@
     </Parsing>
     <CodeGeneration>
       <SmartLinkUnit Value="True"/>
-      <Optimizations>
-        <OptimizationLevel Value="3"/>
-      </Optimizations>
     </CodeGeneration>
     <Linking>
       <Debugging>
@@ -350,6 +378,9 @@
         </Win32>
       </Options>
     </Linking>
+    <Other>
+      <CompilerPath Value="$(CompPath)"/>
+    </Other>
   </CompilerOptions>
   <Debugging>
     <Exceptions Count="3">
@@ -364,4 +395,5 @@
       </Item3>
     </Exceptions>
   </Debugging>
+  <EditorMacros Count="0"/>
 </CONFIG>

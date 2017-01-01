@@ -2,6 +2,7 @@ program kapclient;
 
 {$mode objfpc}
 {$h+}
+{$define usecthreads}
 
 uses
   {$ifdef unix}
@@ -10,14 +11,15 @@ uses
   {$endif}
   {$endif}
   interfaces,
-  forms, lazcontrols,
+  forms,
   kapclientform;
 
-{$r *.res}
+{$R *.res}
 
 begin
-  requirederivedformresource := True;
+  application.title:='KAPcake';
+  requirederivedformresource := true;
   application.initialize;
-  Application.CreateForm(TKapForm, KapForm);
+  application.createform(tkapform, kapform);
   application.run;
 end.
