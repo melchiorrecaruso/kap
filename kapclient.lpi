@@ -39,7 +39,7 @@
         <PackageName Value="LCL"/>
       </Item3>
     </RequiredPackages>
-    <Units Count="23">
+    <Units Count="24">
       <Unit0>
         <Filename Value="kapclient.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -66,8 +66,8 @@
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="42"/>
-        <CursorPos X="47" Y="45"/>
+        <TopLine Value="41"/>
+        <CursorPos X="33" Y="50"/>
         <FoldState Value=" T3jY0At"/>
         <UsageCount Value="50"/>
         <Loaded Value="True"/>
@@ -170,8 +170,13 @@
       </Unit16>
       <Unit17>
         <Filename Value="libkapclient.pas"/>
-        <CursorPos X="96" Y="5"/>
+        <UnitName Value="libkapclient"/>
+        <EditorIndex Value="2"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="23"/>
         <UsageCount Value="13"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit17>
       <Unit18>
@@ -206,8 +211,19 @@
         <CursorPos X="56" Y="30"/>
         <UsageCount Value="9"/>
       </Unit22>
+      <Unit23>
+        <Filename Value="wiringpi.pas"/>
+        <UnitName Value="wiringpi"/>
+        <EditorIndex Value="1"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="31"/>
+        <CursorPos X="28" Y="83"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit23>
     </Units>
-    <JumpHistory Count="26" HistoryIndex="25">
+    <JumpHistory Count="28" HistoryIndex="27">
       <Position1>
         <Filename Value="kapclientform.pas"/>
         <Caret Line="61" Column="37" TopLine="39"/>
@@ -312,6 +328,14 @@
         <Filename Value="kapclientform.pas"/>
         <Caret Line="139" Column="10" TopLine="99"/>
       </Position26>
+      <Position27>
+        <Filename Value="wiringpi.pas"/>
+        <Caret Line="1" Column="1" TopLine="1"/>
+      </Position27>
+      <Position28>
+        <Filename Value="libkapclient.pas"/>
+        <Caret Line="33" Column="3" TopLine="1"/>
+      </Position28>
     </JumpHistory>
   </ProjectOptions>
   <CompilerOptions>

@@ -1,7 +1,7 @@
 (* Pascal wrapper unit for Gordon Henderson wiringPi library.
  * The source can be found at https://http://wiringpi.com
  *
- * libwiringpi: version 0.1 by Melchiorre Caruso
+ * wiringpi.pas: version 0.1 by Melchiorre Caruso
  *
  * wiringPi.h:
  *    Arduino like Wiring library for the Raspberry Pi.
@@ -25,7 +25,10 @@
  ***********************************************************************
  *)
 
-unit h2wiringpi;
+unit wiringpi;
+
+{$mode objfpc}
+{$h+}
 
 {$linklib c}
 {$linklib libwiringPi}

@@ -26,7 +26,7 @@ unit libkapclient;
 interface
 
 uses
-  sysutils;
+  sysutils, wiringpi;
 
 implementation
 
