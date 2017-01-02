@@ -40,8 +40,13 @@ type
     monitorpanel: tpanel;
     procedure actionbitbtnclick(sender: tobject);
     procedure autocheckboxeditingdone(sender: tobject);
+    procedure DownBitBtnClick(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
+    procedure LeftBitBtnClick(Sender: TObject);
+    procedure RightBitBtnClick(Sender: TObject);
     procedure selftimertimer(sender: tobject);
     procedure formcreate(sender: tobject);
+    procedure UpBitBtnClick(Sender: TObject);
   private
     { private declarations }
   public
@@ -52,14 +57,25 @@ type
 var
   kapcam:  tkapcam;
   kapform: tkapform;
+  kapinit: boolean;
 
 implementation
 
 {$r *.lfm}
 
 uses
-  libkapclient,
-  process;
+  libkapclient, process, wiringpi;
+
+// common routines
+
+procedure updatebtn(value: boolean);
+begin
+  kapform.upbitbtn    .enabled := true;
+  kapform.downbitbtn  .enabled := true;
+  kapform.leftbitbtn  .enabled := true;
+  kapform.rightbitbtn .enabled := true;
+  kapform.actionbitbtn.enabled := true;
+end;
 
 { tkapcam }
 
@@ -77,16 +93,31 @@ var
   e: ansistring;
 begin
   synchronize(@disablebtn);
-  deletefile(previewfn);
+  digitalwrite(P11, HIGH);
   runcommand('fswebcam',[
     '-r' ,'640x480',
     '--skip',  '15',
     '--no-banner'  ,
     '--jpeg',  '95',
     previewfn], e);
+  digitalwrite(P12, HIGH);
+  if fileexists(previewfn) then
+  begin
+    digitalwrite(P15, HIGH);
+    synchronize(@clearpreview);
+    digitalwrite(P16, HIGH);
+    synchronize(@showpreview);
+    digitalwrite(P18, HIGH);
+    deletefile(previewfn);
+    delay(1000);
+  end;
 
-  synchronize(@clearpreview);
-  synchronize(@showpreview);
+  digitalwrite(P11, LOW);
+  digitalwrite(P12, LOW);
+  digitalwrite(P15, LOW);
+  digitalwrite(P16, LOW);
+  digitalwrite(P18, LOW);
+
   synchronize(@enablebtn);
 end;
 
@@ -102,39 +133,93 @@ end;
 
 procedure tkapcam.showpreview;
 begin
-  if fileexists(previewfn) then
-    kapform.monitorimage.picture.loadfromfile(previewfn);
+  kapform.monitorimage.picture.loadfromfile(previewfn);
 end;
 
 procedure tkapcam.enablebtn;
 begin
-  with kapform do
-  begin
-    upbitbtn    .enabled := true;
-    downbitbtn  .enabled := true;
-    leftbitbtn  .enabled := true;
-    rightbitbtn .enabled := true;
-    actionbitbtn.enabled := true;
-  end;
+  updatebtn(true);
 end;
 
 procedure tkapcam.disablebtn;
 begin
-  with kapform do
-  begin
-    upbitbtn    .enabled := false;
-    downbitbtn  .enabled := false;
-    leftbitbtn  .enabled := false;
-    rightbitbtn .enabled := false;
-    actionbitbtn.enabled := false;
-  end;
+  updatebtn(false);
 end;
 
 { tkapform }
 
 procedure tkapform.formcreate(sender: tobject);
 begin
-  kapcam := nil;
+  kapcam  := nil;
+  kapinit := wiringPiSetup <> -1;
+  if kapinit then
+  begin
+    pinMode(P11, OUTPUT);
+    pinMode(P12, OUTPUT);
+    pinMode(P15, OUTPUT);
+    pinMode(P16, OUTPUT);
+    pinMode(P18, OUTPUT);
+  end;
+end;
+
+procedure tkapform.formdestroy(sender: tobject);
+begin
+  if kapinit then
+  begin
+    digitalwrite(P11, LOW);
+    digitalwrite(P12, LOW);
+    digitalwrite(P15, LOW);
+    digitalwrite(P16, LOW);
+    digitalwrite(P18, LOW);
+  end;
+end;
+
+procedure tkapform.upbitbtnclick(sender: tobject);
+begin
+  if kapinit then
+  begin
+    updatebtn(false);
+    digitalwrite(P11, HIGH);
+    delay(1000);
+    digitalwrite(P11, LOW);
+    updatebtn(true);
+  end;
+end;
+
+procedure tkapform.downbitbtnclick(sender: tobject);
+begin
+  if kapinit then
+  begin
+    updatebtn(false);
+    digitalwrite(P18, HIGH);
+    delay(1000);
+    digitalwrite(P18, LOW);
+    updatebtn(true);
+  end;
+end;
+
+procedure tkapform.leftbitbtnclick(sender: tobject);
+begin
+  if kapinit then
+  begin
+    updatebtn(false);
+    digitalwrite(P12, HIGH);
+    delay(1000);
+    digitalwrite(P12, LOW);
+    updatebtn(true);
+  end;
+end;
+
+procedure tkapform.rightbitbtnclick(sender: tobject);
+begin
+  if kapinit then
+  begin
+    updatebtn(false);
+    digitalwrite(P16, HIGH);
+    delay(1000);
+    digitalwrite(P16, LOW);
+    updatebtn(true);
+  end;
 end;
 
 procedure tkapform.actionbitbtnclick(sender: tobject);

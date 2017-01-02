@@ -9,6 +9,7 @@ object KapForm: TKapForm
   Constraints.MinHeight = 500
   Constraints.MinWidth = 800
   OnCreate = FormCreate
+  OnDestroy = FormDestroy
   Position = poScreenCenter
   LCLVersion = '1.2.4.0'
   object ActionBitBtn: TBitBtn
@@ -54,9 +55,9 @@ object KapForm: TKapForm
     TabOrder = 1
     object MonitorImage: TImage
       Left = 2
-      Height = 484
+      Height = 480
       Top = 2
-      Width = 638
+      Width = 634
       Align = alClient
       Center = True
       Picture.Data = {
@@ -1480,6 +1481,7 @@ object KapForm: TKapForm
     Constraints.MaxWidth = 140
     Constraints.MinHeight = 48
     Constraints.MinWidth = 140
+    OnClick = UpBitBtnClick
     TabOrder = 2
   end
   object DownBitBtn: TBitBtn
@@ -1498,6 +1500,7 @@ object KapForm: TKapForm
     Constraints.MaxWidth = 140
     Constraints.MinHeight = 48
     Constraints.MinWidth = 140
+    OnClick = DownBitBtnClick
     TabOrder = 3
   end
   object RightBitBtn: TBitBtn
@@ -1516,6 +1519,7 @@ object KapForm: TKapForm
     Constraints.MaxWidth = 140
     Constraints.MinHeight = 48
     Constraints.MinWidth = 140
+    OnClick = RightBitBtnClick
     TabOrder = 4
   end
   object LeftBitBtn: TBitBtn
@@ -1534,6 +1538,7 @@ object KapForm: TKapForm
     Constraints.MaxWidth = 140
     Constraints.MinHeight = 48
     Constraints.MinWidth = 140
+    OnClick = LeftBitBtnClick
     TabOrder = 5
   end
   object AutoCheckBox: TCheckBox
