@@ -112,7 +112,35 @@ const
   INT_EDGE_RISING        =  2;
   INT_EDGE_BOTH          =  3;
 
+type
+
+  // wiringPiNodeStruct
+
+  pwiringPiNodes = ^wiringPiNodeStruct;
+  pwiringPiNodeStruct = ^wiringPiNodeStruct;
+
+  wiringPiNodeStruct = packed record
+    pinBase: longint;
+    pinMax: longint;
+    fd: longint;
+    data0: dword;
+    data1: dword;
+    data2: dword;
+    data3: dword;
+    pinMode: procedure (node: pwiringPiNodeStruct; pin: longint; mode: longint); cdecl;
+    pullUpDnControl: procedure (node: pwiringPiNodeStruct; pin: longint; mode: longint); cdecl;
+    digitalRead: function  (node: pwiringPiNodeStruct; pin: longint): longint; cdecl;
+    digitalWrite: procedure (node: pwiringPiNodeStruct; pin: longint; value: longint); cdecl;
+    pwmWrite: procedure (node: pwiringPiNodeStruct; pin: longint; value: longint); cdecl;
+    analogRead: function  (node: pwiringPiNodeStruct; pin: longint): longint; cdecl;
+    analogWrite: procedure (node: pwiringPiNodeStruct; pin: longint; value: longint); cdecl;
+    next: pwiringPiNodeStruct;
+  end;
+
   // Core wiringPi functions
+
+  function wiringPiFindNode(pin: longint): pwiringPiNodeStruct; cdecl; external;
+  function wiringPiNewNode(pinBase: longint; numPins: longint): pwiringPiNodeStruct; cdecl; external;
 
   function wiringPiSetup    : longint; cdecl; external;
   function wiringPiSetupGpio: longint; cdecl; external;

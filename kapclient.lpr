@@ -12,7 +12,7 @@ uses
   {$endif}
   interfaces,
   forms,
-  kapclientform;
+  kapclientform, pca9685;
 
 {$R *.res}
 
