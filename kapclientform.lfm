@@ -1556,6 +1556,40 @@ object KapForm: TKapForm
     OnEditingDone = AutoCheckBoxEditingDone
     TabOrder = 6
   end
+  object ResetBitBtn: TBitBtn
+    AnchorSideTop.Control = RightBitBtn
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = UpBitBtn
+    AnchorSideRight.Side = asrBottom
+    Left = 654
+    Height = 48
+    Top = 271
+    Width = 140
+    Anchors = [akTop, akRight]
+    BorderSpacing.Top = 18
+    Caption = 'RESET'
+    Constraints.MaxHeight = 48
+    Constraints.MaxWidth = 140
+    Constraints.MinHeight = 48
+    Constraints.MinWidth = 140
+    OnClick = ResetBitBtnClick
+    TabOrder = 7
+  end
+  object Bevel1: TBevel
+    AnchorSideLeft.Control = UpBitBtn
+    AnchorSideTop.Control = ResetBitBtn
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = UpBitBtn
+    AnchorSideRight.Side = asrBottom
+    Left = 656
+    Height = 2
+    Top = 329
+    Width = 136
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Left = 2
+    BorderSpacing.Top = 10
+    BorderSpacing.Right = 2
+  end
   object SelfTimer: TTimer
     Enabled = False
     Interval = 5000

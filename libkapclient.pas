@@ -26,9 +26,23 @@ unit libkapclient;
 interface
 
 uses
-  sysutils, wiringpi;
+  sysutils, wiringpi, pca9685;
+
+
+
+function calcticks(impulseMs: double; freq: longint): longint;
+
 
 implementation
+
+
+function calcticks(impulseMs: double; freq: longint): longint;
+var
+  cycleMs: double;
+begin
+  cycleMs := 1000.0 / freq;
+  result  := trunc((PCA9685_MAX_PWM * impulseMs) / cycleMs + 0.5);
+end;
 
 
 

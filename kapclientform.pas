@@ -20,6 +20,7 @@ type
     procedure disablebtn;
     procedure showpreview;
     procedure clearpreview;
+    procedure autotest;
   protected
     procedure execute; override;
   public
@@ -30,6 +31,8 @@ type
 
   tkapform = class(tform)
     autocheckbox: tcheckbox;
+    Bevel1: TBevel;
+    ResetBitBtn: TBitBtn;
     selftimer: ttimer;
     upbitbtn: tbitbtn;
     downbitbtn: tbitbtn;
@@ -43,6 +46,7 @@ type
     procedure DownBitBtnClick(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure LeftBitBtnClick(Sender: TObject);
+    procedure ResetBitBtnClick(Sender: TObject);
     procedure RightBitBtnClick(Sender: TObject);
     procedure selftimertimer(sender: tobject);
     procedure formcreate(sender: tobject);
@@ -53,18 +57,26 @@ type
     { public declarations }
   end;
 
+const
+  kapsrv_maxvalue = 2.60;
+  kapsrv_minvalue = 0.50;
+  kapsrv_rstvalue = 1.55;
+  kapsrv_incvalue = 0.10;
+  kapsrv_freq     = 50;
 
 var
   kapcam:  tkapcam;
   kapform: tkapform;
   kapinit: boolean;
+  kapsrv0: double;
+  kapsrv1: double;
 
 implementation
 
 {$r *.lfm}
 
 uses
-  libkapclient, process, wiringpi;
+  libkapclient, math, process, wiringpi, pca9685;
 
 // common routines
 
@@ -94,30 +106,24 @@ var
 begin
   synchronize(@disablebtn);
   digitalwrite(P11, HIGH);
+
+  synchronize(@autotest);
+
   runcommand('fswebcam',[
     '-r' ,'640x480',
     '--skip',  '15',
     '--no-banner'  ,
     '--jpeg',  '95',
     previewfn], e);
-  digitalwrite(P12, HIGH);
   if fileexists(previewfn) then
   begin
-    digitalwrite(P15, HIGH);
-    synchronize(@clearpreview);
-    digitalwrite(P16, HIGH);
-    synchronize(@showpreview);
-    digitalwrite(P18, HIGH);
-    deletefile(previewfn);
     delay(1000);
+    synchronize(@clearpreview);
+    synchronize(@showpreview);
+    deletefile(previewfn);
   end;
 
   digitalwrite(P11, LOW);
-  digitalwrite(P12, LOW);
-  digitalwrite(P15, LOW);
-  digitalwrite(P16, LOW);
-  digitalwrite(P18, LOW);
-
   synchronize(@enablebtn);
 end;
 
@@ -136,6 +142,22 @@ begin
   kapform.monitorimage.picture.loadfromfile(previewfn);
 end;
 
+procedure tkapcam.autotest;
+begin
+  pwmWrite(PCA9685_PIN_BASE + 0, calcTicks(kapsrv_maxvalue, kapsrv_freq));
+  pwmWrite(PCA9685_PIN_BASE + 1, calcTicks(kapsrv_minvalue, kapsrv_freq));
+
+  delay(800);
+
+  pwmWrite(PCA9685_PIN_BASE + 0, calcTicks(kapsrv_minvalue, kapsrv_freq));
+  pwmWrite(PCA9685_PIN_BASE + 1, calcTicks(kapsrv_maxvalue, kapsrv_freq));
+
+  delay(800);
+
+  pwmWrite(PCA9685_PIN_BASE + 0, calcTicks(kapsrv_rstvalue, kapsrv_freq));
+  pwmWrite(PCA9685_PIN_BASE + 1, calcTicks(kapsrv_rstvalue, kapsrv_freq));
+end;
+
 procedure tkapcam.enablebtn;
 begin
   updatebtn(true);
@@ -152,13 +174,19 @@ procedure tkapform.formcreate(sender: tobject);
 begin
   kapcam  := nil;
   kapinit := wiringPiSetup <> -1;
+
+  if kapinit then
+    kapinit := pca9685Setup(PCA9685_PIN_BASE, PCA9685_ADDRESS, kapsrv_freq) <> -1;
+
   if kapinit then
   begin
     pinMode(P11, OUTPUT);
-    pinMode(P12, OUTPUT);
-    pinMode(P15, OUTPUT);
-    pinMode(P16, OUTPUT);
-    pinMode(P18, OUTPUT);
+
+    kapsrv0 := kapsrv_rstvalue;
+    pwmWrite(PCA9685_PIN_BASE + 0, calcTicks(kapsrv0, kapsrv_freq));
+
+    kapsrv1 := kapsrv_rstvalue;
+    pwmWrite(PCA9685_PIN_BASE + 1, calcTicks(kapsrv1, kapsrv_freq));
   end;
 end;
 
@@ -167,59 +195,91 @@ begin
   if kapinit then
   begin
     digitalwrite(P11, LOW);
-    digitalwrite(P12, LOW);
-    digitalwrite(P15, LOW);
-    digitalwrite(P16, LOW);
-    digitalwrite(P18, LOW);
   end;
 end;
 
 procedure tkapform.upbitbtnclick(sender: tobject);
 begin
+  updatebtn(false);
   if kapinit then
   begin
-    updatebtn(false);
     digitalwrite(P11, HIGH);
-    delay(1000);
+
+    kapsrv0 := min(kapsrv_maxvalue, kapsrv0 + kapsrv_incvalue);
+    pwmWrite(PCA9685_PIN_BASE + 0, calcTicks(kapsrv0, kapsrv_freq));
+
+    delay(250);
     digitalwrite(P11, LOW);
-    updatebtn(true);
   end;
+  updatebtn(true);
 end;
 
 procedure tkapform.downbitbtnclick(sender: tobject);
 begin
+  updatebtn(false);
   if kapinit then
   begin
-    updatebtn(false);
-    digitalwrite(P18, HIGH);
-    delay(1000);
-    digitalwrite(P18, LOW);
-    updatebtn(true);
+    digitalwrite(P11, HIGH);
+
+    kapsrv0 := max(kapsrv_minvalue, kapsrv0 - kapsrv_incvalue);
+    pwmWrite(PCA9685_PIN_BASE + 0, calcTicks(kapsrv0, kapsrv_freq));
+
+    delay(250);
+    digitalwrite(P11, LOW);
   end;
+  updatebtn(true);
 end;
 
 procedure tkapform.leftbitbtnclick(sender: tobject);
 begin
+  updatebtn(false);
   if kapinit then
   begin
-    updatebtn(false);
-    digitalwrite(P12, HIGH);
-    delay(1000);
-    digitalwrite(P12, LOW);
-    updatebtn(true);
+    digitalwrite(P11, HIGH);
+
+    kapsrv1 := min(kapsrv_maxvalue, kapsrv1 + kapsrv_incvalue);
+    pwmWrite(PCA9685_PIN_BASE + 1, calcTicks(kapsrv1, kapsrv_freq));
+
+    delay(250);
+    digitalwrite(P11, LOW);
   end;
+  updatebtn(true);
 end;
 
 procedure tkapform.rightbitbtnclick(sender: tobject);
 begin
+  updatebtn(false);
   if kapinit then
   begin
-    updatebtn(false);
-    digitalwrite(P16, HIGH);
-    delay(1000);
-    digitalwrite(P16, LOW);
-    updatebtn(true);
+    digitalwrite(P11, HIGH);
+
+    kapsrv1 := max(kapsrv_minvalue, kapsrv1 - kapsrv_incvalue);
+    pwmWrite(PCA9685_PIN_BASE + 1, calcTicks(kapsrv1, kapsrv_freq));
+
+    delay(250);
+    digitalwrite(P11, LOW);
   end;
+  updatebtn(true);
+end;
+
+procedure tkapform.ResetBitBtnClick(Sender: TObject);
+begin
+  updatebtn(false);
+  if kapinit then
+  begin
+    digitalwrite(P11, HIGH);
+
+    kapsrv0 := kapsrv_rstvalue;
+    pwmWrite(PCA9685_PIN_BASE + 0, calcTicks(kapsrv0, kapsrv_freq));
+
+    kapsrv1 := kapsrv_rstvalue;
+    pwmWrite(PCA9685_PIN_BASE + 1, calcTicks(kapsrv1, kapsrv_freq));
+
+    delay(250);
+    digitalwrite(P11, LOW);
+
+  end;
+  updatebtn(true);
 end;
 
 procedure tkapform.actionbitbtnclick(sender: tobject);

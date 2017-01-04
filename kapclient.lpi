@@ -8,6 +8,7 @@
       <Title Value="KAPcake"/>
       <ResourceType Value="res"/>
       <UseXPManifest Value="True"/>
+      <ActiveWindowIndexAtStart Value="0"/>
     </General>
     <i18n>
       <EnableI18N LFM="False"/>
@@ -41,10 +42,11 @@
       <Unit0>
         <Filename Value="kapclient.lpr"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="2"/>
         <WindowIndex Value="1"/>
-        <CursorPos Y="25"/>
-        <UsageCount Value="65"/>
+        <TopLine Value="1"/>
+        <CursorPos X="23" Y="10"/>
+        <UsageCount Value="72"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
@@ -61,11 +63,16 @@
         <ComponentName Value="KapForm"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+        <UnitName Value="kapclientform"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="88"/>
-        <CursorPos X="17" Y="149"/>
-        <UsageCount Value="65"/>
+        <TopLine Value="41"/>
+        <CursorPos X="25" Y="64"/>
+        <FoldState Value=" T3id0711212H"/>
+        <UsageCount Value="72"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit2>
       <Unit3>
         <Filename Value="libkap.pas"/>
@@ -163,10 +170,12 @@
       </Unit16>
       <Unit17>
         <Filename Value="libkapclient.pas"/>
-        <EditorIndex Value="1"/>
+        <UnitName Value="libkapclient"/>
+        <EditorIndex Value="0"/>
         <WindowIndex Value="1"/>
-        <CursorPos Y="23"/>
-        <UsageCount Value="21"/>
+        <TopLine Value="5"/>
+        <CursorPos X="13" Y="13"/>
+        <UsageCount Value="25"/>
         <Loaded Value="True"/>
       </Unit17>
       <Unit18>
@@ -203,146 +212,123 @@
       </Unit22>
       <Unit23>
         <Filename Value="wiringpi.pas"/>
-        <EditorIndex Value="2"/>
+        <UnitName Value="wiringpi"/>
         <WindowIndex Value="1"/>
         <TopLine Value="114"/>
         <CursorPos X="95" Y="131"/>
-        <UsageCount Value="18"/>
-        <Loaded Value="True"/>
+        <UsageCount Value="19"/>
       </Unit23>
       <Unit24>
         <Filename Value="pca9685.pas"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="3"/>
+        <UnitName Value="pca9685"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="91"/>
-        <CursorPos Y="117"/>
-        <UsageCount Value="32"/>
-        <Loaded Value="True"/>
+        <TopLine Value="35"/>
+        <CursorPos X="3" Y="57"/>
+        <UsageCount Value="39"/>
       </Unit24>
     </Units>
-    <JumpHistory Count="30" HistoryIndex="29">
+    <JumpHistory Count="25" HistoryIndex="24">
       <Position1>
-        <Filename Value="pca9685.pas"/>
-        <Caret Line="97" Column="18" TopLine="86"/>
+        <Filename Value="kapclientform.pas"/>
+        <Caret Line="67" Column="43" TopLine="43"/>
       </Position1>
       <Position2>
-        <Filename Value="pca9685.pas"/>
-        <Caret Line="98" Column="49" TopLine="81"/>
+        <Filename Value="kapclientform.pas"/>
+        <Caret Line="159" Column="10" TopLine="138"/>
       </Position2>
       <Position3>
-        <Filename Value="pca9685.pas"/>
-        <Caret Line="104" Column="62" TopLine="86"/>
+        <Filename Value="kapclientform.pas"/>
+        <Caret Line="157" Column="16" TopLine="135"/>
       </Position3>
       <Position4>
-        <Filename Value="pca9685.pas"/>
-        <Caret Line="106" Column="40" TopLine="85"/>
+        <Filename Value="libkapclient.pas"/>
+        <Caret Line="39" Column="50" TopLine="1"/>
       </Position4>
       <Position5>
-        <Filename Value="pca9685.pas"/>
-        <Caret Line="112" Column="11" TopLine="91"/>
+        <Filename Value="libkapclient.pas"/>
+        <Caret Line="34" Column="64" TopLine="3"/>
       </Position5>
       <Position6>
-        <Filename Value="pca9685.pas"/>
-        <Caret Line="109" Column="27" TopLine="91"/>
+        <Filename Value="kapclientform.pas"/>
+        <Caret Line="160" Column="15" TopLine="147"/>
       </Position6>
       <Position7>
-        <Filename Value="pca9685.pas"/>
-        <Caret Line="64" Column="86" TopLine="32"/>
+        <Filename Value="kapclientform.pas"/>
+        <Caret Line="199" Column="5" TopLine="184"/>
       </Position7>
       <Position8>
-        <Filename Value="pca9685.pas"/>
-        <Caret Line="109" Column="43" TopLine="90"/>
+        <Filename Value="kapclientform.pas"/>
+        <Caret Line="64" Column="1" TopLine="55"/>
       </Position8>
       <Position9>
-        <Filename Value="pca9685.pas"/>
-        <Caret Line="110" Column="28" TopLine="91"/>
+        <Filename Value="kapclientform.pas"/>
+        <Caret Line="55" Column="1" TopLine="42"/>
       </Position9>
       <Position10>
-        <Filename Value="pca9685.pas"/>
-        <Caret Line="114" Column="5" TopLine="79"/>
+        <Filename Value="kapclientform.pas"/>
+        <Caret Line="169" Column="12" TopLine="146"/>
       </Position10>
       <Position11>
-        <Filename Value="pca9685.pas"/>
-        <Caret Line="119" Column="24" TopLine="93"/>
+        <Filename Value="kapclientform.pas"/>
+        <Caret Line="168" Column="14" TopLine="50"/>
       </Position11>
       <Position12>
-        <Filename Value="pca9685.pas"/>
-        <Caret Line="122" Column="31" TopLine="96"/>
+        <Filename Value="kapclientform.pas"/>
+        <Caret Line="169" Column="9" TopLine="146"/>
       </Position12>
       <Position13>
-        <Filename Value="pca9685.pas"/>
-        <Caret Line="118" Column="52" TopLine="73"/>
+        <Filename Value="kapclientform.pas"/>
+        <Caret Line="193" Column="31" TopLine="80"/>
       </Position13>
       <Position14>
-        <Filename Value="pca9685.pas"/>
-        <Caret Line="102" Column="7" TopLine="75"/>
+        <Filename Value="kapclientform.pas"/>
+        <Caret Line="198" Column="1" TopLine="171"/>
       </Position14>
       <Position15>
-        <Filename Value="pca9685.pas"/>
-        <Caret Line="121" Column="53" TopLine="98"/>
+        <Filename Value="kapclientform.pas"/>
+        <Caret Line="170" Column="61" TopLine="149"/>
       </Position15>
       <Position16>
-        <Filename Value="kapclient.lpr"/>
-        <Caret Line="12" Column="23"/>
+        <Filename Value="kapclientform.pas"/>
+        <Caret Line="176" Column="31" TopLine="130"/>
       </Position16>
       <Position17>
-        <Filename Value="kapclient.lpr"/>
-        <Caret Line="25"/>
+        <Filename Value="kapclientform.pas"/>
+        <Caret Line="195" Column="1" TopLine="178"/>
       </Position17>
       <Position18>
-        <Filename Value="pca9685.pas"/>
-        <Caret Line="90" Column="5" TopLine="74"/>
+        <Filename Value="kapclientform.pas"/>
+        <Caret Line="234" Column="66" TopLine="215"/>
       </Position18>
       <Position19>
-        <Filename Value="pca9685.pas"/>
-        <Caret Line="99" Column="7" TopLine="87"/>
+        <Filename Value="kapclientform.pas"/>
+        <Caret Line="235" Column="66" TopLine="216"/>
       </Position19>
       <Position20>
-        <Filename Value="kapclient.lpr"/>
-        <Caret Line="25"/>
+        <Filename Value="kapclientform.pas"/>
+        <Caret Line="242" Column="66" TopLine="218"/>
       </Position20>
       <Position21>
-        <Filename Value="pca9685.pas"/>
-        <Caret Line="91" TopLine="73"/>
+        <Filename Value="kapclientform.pas"/>
+        <Caret Line="62" Column="13" TopLine="48"/>
       </Position21>
       <Position22>
-        <Filename Value="kapclient.lpr"/>
-        <Caret Line="25"/>
+        <Filename Value="kapclientform.pas"/>
+        <Caret Line="182" Column="26" TopLine="155"/>
       </Position22>
       <Position23>
-        <Filename Value="pca9685.pas"/>
-        <Caret Line="81" Column="45" TopLine="69"/>
+        <Filename Value="kapclientform.pas"/>
+        <Caret Line="110" Column="26" TopLine="92"/>
       </Position23>
       <Position24>
-        <Filename Value="pca9685.pas"/>
-        <Caret Line="72" Column="40" TopLine="56"/>
+        <Filename Value="kapclientform.pas"/>
+        <Caret Line="157" Column="54" TopLine="52"/>
       </Position24>
       <Position25>
-        <Filename Value="pca9685.pas"/>
-        <Caret Line="86" Column="40" TopLine="70"/>
+        <Filename Value="kapclientform.pas"/>
+        <Caret Line="158" Column="54" TopLine="130"/>
       </Position25>
-      <Position26>
-        <Filename Value="kapclient.lpr"/>
-        <Caret Line="20" Column="65"/>
-      </Position26>
-      <Position27>
-        <Filename Value="pca9685.pas"/>
-        <Caret Line="78" Column="52" TopLine="61"/>
-      </Position27>
-      <Position28>
-        <Filename Value="kapclient.lpr"/>
-        <Caret Line="25"/>
-      </Position28>
-      <Position29>
-        <Filename Value="kapclient.lpr"/>
-        <Caret Line="18" Column="23"/>
-      </Position29>
-      <Position30>
-        <Filename Value="kapclient.lpr"/>
-        <Caret Line="25"/>
-      </Position30>
     </JumpHistory>
   </ProjectOptions>
   <CompilerOptions>
@@ -380,6 +366,9 @@
         </Win32>
       </Options>
     </Linking>
+    <Other>
+      <CompilerPath Value="$(CompPath)"/>
+    </Other>
   </CompilerOptions>
   <Debugging>
     <Exceptions Count="3">
@@ -394,4 +383,5 @@
       </Item3>
     </Exceptions>
   </Debugging>
+  <EditorMacros Count="0"/>
 </CONFIG>

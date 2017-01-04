@@ -54,8 +54,9 @@ const
   PCA9685_OSC_CLOCK     = 25000000.0;
   PCA9685_PRESCALE_DIV  = 4096.0;
 
-const
-  PIN_ALL = 16;
+  PCA9685_ADDRESS       = $40;
+  PCA9685_PIN_BASE      = 300;
+  PCA9685_MAX_PWM       = 4096;
 
   function pca9685Setup(pinBase: longint; i2cAddress: longint; freq: longint): longint;
 
@@ -126,7 +127,7 @@ begin
   //node^.digitalRead  := @myOffRead;
   //node^.analogRead   := @myOnRead;
 
-    result := 0;
+    result := fd;
   end;
 end;
 
